@@ -22,7 +22,7 @@ String gridToString="";
       for (int j = 0; j < content.length; j++) {
         gridToString+=content[i][j] + " ";
       }
-      gridToString+="\r\n";
+      gridToString+="<br>";
    }
    return gridToString;
 }
