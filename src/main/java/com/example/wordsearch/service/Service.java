@@ -75,7 +75,7 @@ public char[][] genarateGrid(int gridSize, List<String> words) {
             }
         }
     }
-    randamFillGrid(content);
+   randamFillGrid(content);
     return content;
 }
 
