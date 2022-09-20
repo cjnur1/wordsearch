@@ -19,17 +19,16 @@ public class Controller {
 Service service;
 
 @GetMapping("/")
+public ModelAndView home(ModelAndView modelAndView)
+{
+    modelAndView.setViewName("index");
+    return modelAndView;
+}
+@GetMapping("/search")
 public ModelAndView grid(ModelAndView modelAndView,@RequestParam int gridSize, @RequestParam List<String> words) {
     char[][] content = service.genarateGrid(gridSize,
             words);
-    String gridToString = "";
-    for (int i = 0; i < content.length; i++) {
-        for (int j = 0; j < content.length; j++) {
-            gridToString += content[i][j] + " ";
-        }
-        gridToString += "";
-    }
-    modelAndView.setViewName("index");
+    modelAndView.setViewName("search");
     modelAndView.addObject("grid",content);
     return modelAndView;
 }
